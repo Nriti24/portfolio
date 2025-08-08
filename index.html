@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nriti | Portfolio</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Typed.js for typing animation -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+<body>
+
+    <!-- Logo + Name -->
+<div class="logo-container">
+  <span class="logo-text">NRITI SHUKLA</span>
+</div>
+
+
+  <!-- Dark Mode Toggle -->
+  <button id="darkToggle" title="Toggle Dark Mode">🌙</button>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" title="Back to Top">↑</button>
+
+  <!-- Social Sidebar -->
+  <div class="social-sidebar">
+    <a href="https://github.com/Nriti24" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/nriti-shukla-43797b294" target="_blank">LinkedIn</a>
+    <a href="mailto:nritishukla@gmail.com">Email</a>
+  </div>
+
+  <!-- Header -->
+  <header data-aos="fade-down">
+    <h1>Hello, I'm <span id="typed"></span></h1>
+    <p>A passionate Computer Science student 🚀</p>
+    <a href="Nriti_Shukla_Professional_Resume.pdf" class="btn" download>DOWNLOAD RESUME</a>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" data-aos="fade-right">
+    <h2>About Me</h2>
+    <p> Myself Nriti Shukla and I’m a 3rd semester B.Tech CS student who loves learning tech, building projects, and exploring development.
+        I have completed intermediate from CBSE board with 88% and high school with 94% and 2 years of BTech journey with 7.5+ cgpa in all of the 4 semesters.
+         I have participated in many hackathons and extra curricular activities.
+        I had a confident and motivated personality with strong leadership qualities and presentation skills.
+         I’m currently looking for internship opportunities to grow and contribute.
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" data-aos="fade-left">
+  <h2>Skills</h2>
+  <div class="skills-icons">
+    <div class="skill"><i class="fab fa-html5"></i><span>HTML</span></div>
+    <div class="skill"><i class="fab fa-css3-alt"></i><span>CSS</span></div>
+    <div class="skill"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+    <div class="skill"><i class="fas fa-code"></i><span>C/C++</span></div>
+    <div class="skill"><i class="fab fa-python"></i><span>Python</span></div>
+  </div>
+</section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" data-aos="fade-up">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Todo App</strong> – A task manager app built using HTML, CSS, JS.</li>
+      <li><strong>Portfolio Website</strong> – You're looking at it 😉</li>
+    </ul>
+  </section>
+
+  <section id="Certficates" data-aos="fade-up">
+    <h2>Certificates</h2>
+    <ul>
+      <li><strong>Soft Skills</strong> – 1. English as a second language by Saylor Academy <br> 2. Effective Speaking by UPGRAD
+    <br> 3. Personality Development by NSDC. <br> 4. Development of personality by Infosys.</li>
+      <li><strong>Core Skills</strong> – 1. Introduction to IOT by SimpliLearn <br> 2. Operationg System oundation by Infosec. 😉</li>
+    </ul>
+  </section>
+
+  <!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form action="https://formspree.io/f/xanblaay" method="POST" class="contact-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="_replyto" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+
+<!-- Script for form submission -->
+<script>
+const form = document.getElementById("contact-form");
+const status = document.getElementById("status");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+    if (response.ok) {
+      status.innerHTML = "✅ Message sent successfully!";
+      status.style.color = "green";
+      form.reset();
+    } else {
+      status.innerHTML = "❌ Oops! Something went wrong.";
+      status.style.color = "red";
+    }
+  } catch (error) {
+    status.innerHTML = "❌ Network error. Try again later.";
+    status.style.color = "red";
+  }
+});
+</script>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Nriti | Built with ❤️</p>
+  </footer>
+
+  <!-- AOS Init + Custom Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Typed.js animation
+    var typed = new Typed('#typed', {
+      strings: ['Nriti Shukla', 'a Frontend Learner 💻', 'a Problem Solver 💡', 'a Tech Enthusiast 🚀'],
+      typeSpeed: 60,
+      backSpeed: 90,
+      loop: true
+    });
+
+    // Dark Mode Toggle
+    const darkToggle = document.getElementById("darkToggle");
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    // Back to Top Button
+    const backToTop = document.getElementById("backToTop");
+    window.onscroll = () => {
+      backToTop.style.display = (document.documentElement.scrollTop > 100) ? "block" : "none";
+    };
+    backToTop.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+  </script>
+</body>
+</html>

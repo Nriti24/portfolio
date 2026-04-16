@@ -74,7 +74,48 @@ a:hover {
   text-decoration: underline;
   color: #005f99;
 }
+.skills {
+  padding: 60px 20px;
+  text-align: center;
+}
 
+.skills h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.skill-card {
+  background: #1e1e2f;
+  border-radius: 15px;
+  padding: 20px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.skill-card i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  font-size: 14px;
+  color: #fff;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: #292943;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
 /* Footer */
 footer {
   text-align: center;
